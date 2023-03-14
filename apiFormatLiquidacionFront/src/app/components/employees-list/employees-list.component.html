@@ -1,0 +1,32 @@
+<h5> Employees List</h5>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Document</th>
+            <th>Name</th>
+            <th>Job</th>
+            <th>Start Date</th>
+            <th>Salary</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor = "let emp of employees">
+
+            <td>{{emp.id}}</td>
+            <td>{{emp.document}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.job}}</td>
+            <td>{{emp.startDate}}</td>
+            <td>{{emp.salary.salary}}</td>
+            <td>{{emp.status}}</td>
+            <button  [disabled]="emp.status !== 'Activo'" (click) = "updateEmployee(emp.id)" class = "btn btn-info" style="margin-left: 10px"> Edit</button>
+            <button  [disabled]="emp.status !== 'Activo'" (click) = "deleteEmployee(emp.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+            <button  [disabled]="emp.status !== 'Activo'" (click) = "liquidacionEmployee(emp.id)" class = "btn btn-danger" style="margin-left: 10px"> Liquidar</button>
+            <button  (click) = "vermas(emp.id)" class = "btn btn-info" style="margin-left: 10px"> Ver más</button>
+        </tr>
+    </tbody>
+</table>

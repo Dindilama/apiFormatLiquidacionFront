@@ -1,0 +1,45 @@
+<h5> Ver liquidacion</h5>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>fechaFin</th>
+            <th>Motivo</th>
+            <th>Auxilio de transporte</th>
+            <th>Salario</th>
+            <th>Fecha inicio</th>
+            <th>Fecha fin</th>
+            <th>Dias laborados</th>
+            <th>Salario base</th>
+            <th>Cesantias</th>
+            <th>Vacaciones</th>
+            <th>Intereses cesantias</th>
+            <th>Prima servicios</th>
+            <th>Total liquidacion</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor = "let emp of liquidacion">
+            <td>{{emp.idEmployee}}</td>
+            <td>{{emp.fechaFin}}</td>
+            <td>{{emp.motivo}}</td>
+            <td>{{emp.aux_transporte}}</td>
+            <td>{{emp.salario}}</td>
+            <td>{{emp.fecha_inicio}}</td>
+            <td>{{emp.fecha_fin}}</td>
+            <td>{{emp.dias_laborados}}</td>
+            <td>{{emp.salario_base}}</td>
+            <td>{{emp.cesantias}}</td>
+            <td>{{emp.vacaciones}}</td>
+            <td>{{emp.intereses_cesantias}}</td>
+            <td>{{emp.prima_servicios}}</td>
+            <td>{{emp.total_liquidacion}}</td>
+          </tr>
+    </tbody>
+</table>
+
+<div class="form-group col">
+  <button   (click) = "vermas(employee.id)" class = "form-control btn btn-danger" type ="submit">Volver</button>
+</div>
+
